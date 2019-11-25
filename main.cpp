@@ -1,10 +1,13 @@
 #include <iostream>
 
+#include "BinarySearchTree.h"
+
 using namespace std;
 
 int main(int argc, char* argv[]) {
 
-    BinarySearchTree bst;
+    cout << "Hello Trees!" << endl;
+    /*BinarySearchTree bst;
     
     bst.append(45);
     bst.append(23);
@@ -33,4 +36,5 @@ int main(int argc, char* argv[]) {
     cout << bst.lowestCommonAncestor(18, 56);
 
     cout << bst.find(56);
+    */
 }

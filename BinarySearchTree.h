@@ -1,5 +1,7 @@
-#IFNDEF BINTREE
-#DEFINE BINTREE
+#ifndef BINTREE
+#define BINTREE
+
+#include<cstdio>
 
 class TreeNode
 {
@@ -47,4 +49,4 @@ class BinarySearchTree {
 
 };
 
-#ENDIF
+#endif
