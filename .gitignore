@@ -1,0 +1,4 @@
+bintree.out*
+*.out
+*.log
+**/*.out
