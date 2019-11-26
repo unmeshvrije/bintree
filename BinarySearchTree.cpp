@@ -49,3 +49,39 @@ void BinarySearchTree::inorderInternal(TreeNode *root) {
 void BinarySearchTree::printInOrder() {
     inorderInternal(root);
 }
+void BinarySearchTree::printLevelWise()
+{
+	int h = Height(root);
+	int i;
+	for (i = 1; i <= h; i++)
+	{
+		PrintLevelWiseInternal(root, i);
+		cout << endl;
+	}	
+}
+void BinarySearchTree::PrintLevelWiseInternal(TreeNode* root,int Level)
+{
+	if (root == NULL)
+		return;
+	if (Level == 1)
+		std::cout<<root->data<<" ";
+	else if (Level > 1)
+	{
+		PrintLevelWiseInternal(root->left, Level - 1);
+		PrintLevelWiseInternal(root->right, Level - 1);
+	}	
+}
+int BinarySearchTree::Height(TreeNode* root)
+{
+	if (root == NULL) {
+		return -1;
+	}
+	int lefth = Height(root->left);
+	int righth = Height(root->right);
+	if (lefth > righth) {
+		return lefth + 1;
+	}
+	else {
+		return righth + 1;
+	}
+}
