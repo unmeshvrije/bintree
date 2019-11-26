@@ -60,6 +60,7 @@ void BinarySearchTree::printLevelWise()
 		cout << endl;
 	}	
 }
+// Method for subtree-traversing level by level
 void BinarySearchTree::PrintLevelWiseInternal(TreeNode* root,int Level)
 {
 	if (root == NULL)
