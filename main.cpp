@@ -27,9 +27,9 @@ int main(int argc, char* argv[]) {
     /*bst.printPreOrder();
 
     bst.printPostOrder();
-
+*/
     bst.printLevelWise();
-
+/*
     bst.printLevelWiseReverse();
 
     bst.printZigZagLevel();

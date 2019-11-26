@@ -31,6 +31,8 @@ class BinarySearchTree {
         // some changes by yousif
         void appendInternal(TreeNode** root, TreeNode * newnode);
         void inorderInternal(TreeNode *root);
+        void PrintLevelWiseInternal(TreeNode* root,int Level);
+	    int Height(TreeNode* root);
     public:
     
     BinarySearchTree();
