@@ -1,18 +1,17 @@
 #ifndef BINTREE
 #define BINTREE
 
-#include<cstdio>
+#include <cstdio>
 
 class TreeNode
 {
-    public:
-
+public:
     struct TreeNode *left;
     int data;
     struct TreeNode *right;
 
-
-    ~TreeNode() {
+    ~TreeNode()
+    {
         delete left;
         delete right;
         std::cout << "DTOR : TreeNode" << std::endl;
@@ -21,18 +20,23 @@ class TreeNode
     }
 };
 
+class BinarySearchTree
+{
 
-class BinarySearchTree {
+private:
+    TreeNode *root;
 
-    private:
-        TreeNode* root;
+    // some private functions
+    // some changes by yousif
+    void appendInternal(TreeNode **root, TreeNode *newnode);
+    void inorderInternal(TreeNode *root);
 
-        // some private functions
-        // some changes by yousif
-        void appendInternal(TreeNode** root, TreeNode * newnode);
-        void inorderInternal(TreeNode *root);
-    public:
-    
+    // Yousif Alneamy
+    bool findInternal(TreeNode *root, int num);
+    bool isBalancedInternal(TreeNode *root);
+    int heightInternal(TreeNode *root);
+
+public:
     BinarySearchTree();
     virtual ~BinarySearchTree();
 
@@ -49,7 +53,7 @@ class BinarySearchTree {
     // Abdullah S. Mahmoud
     void printLevelWise();
 
-    // Shamil-Al-Ameen 
+    // Shamil-Al-Ameen
     void printLevelWiseReverse();
 
     // Omar Al Saffar
@@ -61,9 +65,8 @@ class BinarySearchTree {
 
     //Yousif Alneamy
     bool find(int num);
-    // Yousif Alneamy
     bool isBalanced();
-
+    int height();
 };
 
 #endif
