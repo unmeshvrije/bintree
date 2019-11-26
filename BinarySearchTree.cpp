@@ -4,32 +4,40 @@
 
 using namespace std;
 // CTOR
-BinarySearchTree::BinarySearchTree() {
+BinarySearchTree::BinarySearchTree()
+{
     root = NULL;
 }
 
 // DTOR
-BinarySearchTree::~BinarySearchTree() {
+BinarySearchTree::~BinarySearchTree()
+{
     delete root;
-    cout << "DTOR : BST" << endl;
+    //cout << "DTOR : BST" << endl;
     root = NULL;
 }
 
-void BinarySearchTree::appendInternal(TreeNode ** root, TreeNode* newnode){
+void BinarySearchTree::appendInternal(TreeNode **root, TreeNode *newnode)
+{
     // Check if the root is NULL
-    if (*root == NULL) {
+    if (*root == NULL)
+    {
         *root = newnode;
         return;
     }
-    if (newnode->data <= (*root)->data) {
+    if (newnode->data <= (*root)->data)
+    {
         appendInternal((&(*root)->left), newnode);
-    } else {
+    }
+    else
+    {
         appendInternal((&(*root)->right), newnode);
     }
 }
 
-void BinarySearchTree::append(int num) {
-    TreeNode * newnode = new TreeNode;
+void BinarySearchTree::append(int num)
+{
+    TreeNode *newnode = new TreeNode;
     newnode->data = num;
     newnode->left = NULL;
     newnode->right = NULL;
@@ -37,8 +45,10 @@ void BinarySearchTree::append(int num) {
     appendInternal(&root, newnode);
 }
 
-void BinarySearchTree::inorderInternal(TreeNode *root) {
-    if (root == NULL) {
+void BinarySearchTree::inorderInternal(TreeNode *root)
+{
+    if (root == NULL)
+    {
         return;
     }
     inorderInternal(root->left);
@@ -46,11 +56,10 @@ void BinarySearchTree::inorderInternal(TreeNode *root) {
     inorderInternal(root->right);
 }
 
-void BinarySearchTree::printInOrder() {
+void BinarySearchTree::printInOrder()
+{
     inorderInternal(root);
 }
-
-//By @Maher
 
 void BinarySearchTree::preOrderInternal(TreeNode *root) {
     if (root == NULL) {
@@ -64,4 +73,91 @@ void BinarySearchTree::preOrderInternal(TreeNode *root) {
 
 void BinarySearchTree::printPreOrder() {
     preOrderInternal(root);
+}
+
+bool BinarySearchTree::find(int num)
+{
+    return findInternal(root, num);
+}
+
+bool BinarySearchTree::findInternal(TreeNode *root, int num)
+{
+    if (root == NULL)
+    {
+        return false;
+    }
+    int data = root->data;
+    if (num == data)
+    {
+        return true;
+    }
+    if (num > data)
+    {
+        return findInternal(root->right, num);
+    }
+    else
+    {
+        return findInternal(root->left, num);
+    }
+}
+
+bool BinarySearchTree::isBalanced()
+{
+    return isBalancedInternal(root);
+}
+
+bool BinarySearchTree::isBalancedInternal(TreeNode *root)
+{
+    if (root == NULL)
+    {
+        return true;
+    }
+
+    int leftMaxHeight = heightInternal(root->left);
+    int rightMaxHeight = heightInternal(root->right);
+
+    int diff = abs(leftMaxHeight - rightMaxHeight);
+
+    return diff <= 1 && isBalancedInternal(root->left) && isBalancedInternal(root->right);
+}
+
+int BinarySearchTree::height()
+{
+    return heightInternal(root);
+}
+
+int BinarySearchTree::heightInternal(TreeNode *root)
+{
+    if (root == NULL)
+    {
+        return -1;
+    }
+
+    int leftHeight = heightInternal(root->left) + 1;
+    int rightHeight = heightInternal(root->right) + 1;
+    return max(leftHeight, rightHeight);
+}
+
+void BinarySearchTree::printLevelWise()
+{
+	int h = height();
+	int i;
+	for (i = 1; i <= h; i++)
+	{
+		PrintLevelWiseInternal(root, i);
+		cout << endl;
+	}	
+}
+void BinarySearchTree::PrintLevelWiseInternal(TreeNode* root,int Level)
+{
+	if (root == NULL)
+		return;
+	if (Level == 1)
+		std::cout<<root->data<<" ";
+	else if (Level > 1)
+	{
+		PrintLevelWiseInternal(root->left, Level - 1);
+		PrintLevelWiseInternal(root->right, Level - 1);
+	}	
+
 }
