@@ -4,32 +4,40 @@
 
 using namespace std;
 // CTOR
-BinarySearchTree::BinarySearchTree() {
+BinarySearchTree::BinarySearchTree()
+{
     root = NULL;
 }
 
 // DTOR
-BinarySearchTree::~BinarySearchTree() {
+BinarySearchTree::~BinarySearchTree()
+{
     delete root;
     cout << "DTOR : BST" << endl;
     root = NULL;
 }
 
-void BinarySearchTree::appendInternal(TreeNode ** root, TreeNode* newnode){
+void BinarySearchTree::appendInternal(TreeNode **root, TreeNode *newnode)
+{
     // Check if the root is NULL
-    if (*root == NULL) {
+    if (*root == NULL)
+    {
         *root = newnode;
         return;
     }
-    if (newnode->data <= (*root)->data) {
+    if (newnode->data <= (*root)->data)
+    {
         appendInternal((&(*root)->left), newnode);
-    } else {
+    }
+    else
+    {
         appendInternal((&(*root)->right), newnode);
     }
 }
 
-void BinarySearchTree::append(int num) {
-    TreeNode * newnode = new TreeNode;
+void BinarySearchTree::append(int num)
+{
+    TreeNode *newnode = new TreeNode;
     newnode->data = num;
     newnode->left = NULL;
     newnode->right = NULL;
@@ -37,8 +45,10 @@ void BinarySearchTree::append(int num) {
     appendInternal(&root, newnode);
 }
 
-void BinarySearchTree::inorderInternal(TreeNode *root) {
-    if (root == NULL) {
+void BinarySearchTree::inorderInternal(TreeNode *root)
+{
+    if (root == NULL)
+    {
         return;
     }
     inorderInternal(root->left);
@@ -46,6 +56,33 @@ void BinarySearchTree::inorderInternal(TreeNode *root) {
     inorderInternal(root->right);
 }
 
-void BinarySearchTree::printInOrder() {
+void BinarySearchTree::printInOrder()
+{
     inorderInternal(root);
+}
+
+bool BinarySearchTree::find(int num)
+{
+    return findInternal(root, num);
+}
+
+bool BinarySearchTree::findInternal(TreeNode *root, int num)
+{
+    if (root == NULL)
+    {
+        return false;
+    }
+    int data = root->data;
+    if (num == data)
+    {
+        return true;
+    }
+    if (num > data)
+    {
+        return findInternal(root->right, num);
+    }
+    else
+    {
+        return findInternal(root->left, num);
+    }
 }
