@@ -16,6 +16,7 @@ BinarySearchTree::~BinarySearchTree() {
 }
 
 void BinarySearchTree::appendInternal(TreeNode ** root, TreeNode* newnode){
+    // Check if the root is NULL
     if (*root == NULL) {
         *root = newnode;
         return;

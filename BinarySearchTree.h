@@ -27,6 +27,7 @@ class BinarySearchTree {
     private:
         TreeNode* root;
 
+        // some private functions
         void appendInternal(TreeNode** root, TreeNode * newnode);
         void inorderInternal(TreeNode *root);
     public:
