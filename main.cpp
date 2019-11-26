@@ -24,11 +24,11 @@ int main(int argc, char* argv[]) {
 
     //bst.printInOrder();
 
-    /*bst.printPreOrder();
+    bst.printPreOrder();
 
-    bst.printPostOrder();
+    /*bst.printPostOrder();
 */
-    bst.printLevelWise();
+   // bst.printLevelWise();
 /*
     bst.printLevelWiseReverse();
 

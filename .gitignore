@@ -1,4 +1,5 @@
 bintree.out*
 *.out
 *.log
+*.o
 **/*.out
