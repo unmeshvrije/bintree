@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
     bst.append(56);
     bst.append(67);
     bst.append(52);
+    bst.append(91);
 
     bst.printInOrder();
 
