@@ -75,7 +75,7 @@ void BinarySearchTree::PrintLevelWiseInternal(TreeNode* root,int Level)
 int BinarySearchTree::Height(TreeNode* root)
 {
 	if (root == NULL) 
-		return -1;
+		return 0;
 	else
     {
 	int lefth = Height(root->left);
