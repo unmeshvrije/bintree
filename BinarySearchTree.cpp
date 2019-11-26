@@ -50,4 +50,21 @@ void BinarySearchTree::inorderInternal(TreeNode *root) {
 void BinarySearchTree::printInOrder() {
     inorderInternal(root);
 }
-//test by @Mohanad
+// by @Mohanad
+void BinarySearchTree::preOrderInternal(TreeNode *root) 
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    
+    cout << root->data << endl;
+    preOrderInternal(root->left);
+    preOrderInternal(root->right);
+}
+
+void BinarySearchTree::printPreOrder()
+{
+    preOrderInternal(root);
+}
+//end homework
