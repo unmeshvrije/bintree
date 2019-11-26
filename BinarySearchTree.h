@@ -31,6 +31,9 @@ class BinarySearchTree {
         // some changes by yousif
         void appendInternal(TreeNode** root, TreeNode * newnode);
         void inorderInternal(TreeNode *root);
+
+        //By @Maher
+        void preOrderInternal(TreeNode *root);
     public:
     
     BinarySearchTree();
