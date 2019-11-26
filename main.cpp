@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
 
     bst.printInOrder();
 
-    /*bst.printPreOrder();
+    bst.printPreOrder();
 
     bst.printPostOrder();
 
@@ -37,5 +37,5 @@ int main(int argc, char* argv[]) {
     cout << bst.lowestCommonAncestor(18, 56);
 
     cout << bst.find(56);
-    */
+    
 }
