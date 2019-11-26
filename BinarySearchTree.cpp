@@ -123,3 +123,26 @@ int BinarySearchTree::heightInternal(TreeNode *root)
     int rightHeight = heightInternal(root->right) + 1;
     return max(leftHeight, rightHeight);
 }
+
+void BinarySearchTree::printLevelWise()
+{
+	int h = height();
+	int i;
+	for (i = 1; i <= h; i++)
+	{
+		PrintLevelWiseInternal(root, i);
+		cout << endl;
+	}	
+}
+void BinarySearchTree::PrintLevelWiseInternal(TreeNode* root,int Level)
+{
+	if (root == NULL)
+		return;
+	if (Level == 1)
+		std::cout<<root->data<<" ";
+	else if (Level > 1)
+	{
+		PrintLevelWiseInternal(root->left, Level - 1);
+		PrintLevelWiseInternal(root->right, Level - 1);
+	}	
+}
