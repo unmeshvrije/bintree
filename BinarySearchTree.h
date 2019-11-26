@@ -15,6 +15,7 @@ class TreeNode
     ~TreeNode() {
         delete left;
         delete right;
+        std::cout << "DTOR : TreeNode" << std::endl;
         left = NULL;
         right = NULL;
     }
@@ -26,12 +27,14 @@ class BinarySearchTree {
     private:
         TreeNode* root;
 
+        void appendInternal(TreeNode** root, TreeNode * newnode);
+        void inorderInternal(TreeNode *root);
     public:
     
     BinarySearchTree();
     virtual ~BinarySearchTree();
 
-    int append(int num);
+    void append(int num);
 
     void printInOrder();
     void printPreOrder();

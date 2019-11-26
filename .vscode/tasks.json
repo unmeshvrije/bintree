@@ -16,7 +16,7 @@
         {
             "label":"build",
             "command":"clang++",
-            "args": ["-std=c++17", "-stdlib=libc++", "main.cpp", "BinarySearchTree.cpp", "-o" ,"bintree.out", "--debug"],
+            "args": ["-std=c++11", "-stdlib=libc++", "main.cpp", "BinarySearchTree.cpp", "-o" ,"bintree.out", "--debug"],
             "group": "build"
         },
         {

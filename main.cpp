@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 
     cout << "Hello Trees!" << endl;
-    /*BinarySearchTree bst;
+    BinarySearchTree bst;
     
     bst.append(45);
     bst.append(23);
@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 
     bst.printInOrder();
 
-    bst.printPreOrder();
+    /*bst.printPreOrder();
 
     bst.printPostOrder();
 
