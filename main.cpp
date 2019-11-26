@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
 
     cout << "Hello Trees!" << endl;
     BinarySearchTree bst;
-    
+    //calling of append method
     bst.append(45);
     bst.append(23);
     bst.append(14);
