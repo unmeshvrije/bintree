@@ -49,3 +49,19 @@ void BinarySearchTree::inorderInternal(TreeNode *root) {
 void BinarySearchTree::printInOrder() {
     inorderInternal(root);
 }
+
+/////    Omar Inaam
+
+void BinarySearchTree::postorderInternal(TreeNode *root) {
+    if (root == NULL) {
+        return;
+    }
+    cout << root->data << endl;
+    postorderInternal(root->left);
+
+    postorderInternal(root->right);
+}
+
+void BinarySearchTree::printpostOrder() {
+    postorderInternal(root);
+}
