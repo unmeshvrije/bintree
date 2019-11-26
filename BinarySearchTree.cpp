@@ -61,6 +61,20 @@ void BinarySearchTree::printInOrder()
     inorderInternal(root);
 }
 
+void BinarySearchTree::preOrderInternal(TreeNode *root) {
+    if (root == NULL) {
+        return;
+    }
+    
+    cout << root->data << endl;
+    preOrderInternal(root->left);
+    preOrderInternal(root->right);
+}
+
+void BinarySearchTree::printPreOrder() {
+    preOrderInternal(root);
+}
+
 bool BinarySearchTree::find(int num)
 {
     return findInternal(root, num);
@@ -145,4 +159,5 @@ void BinarySearchTree::PrintLevelWiseInternal(TreeNode* root,int Level)
 		PrintLevelWiseInternal(root->left, Level - 1);
 		PrintLevelWiseInternal(root->right, Level - 1);
 	}	
+
 }

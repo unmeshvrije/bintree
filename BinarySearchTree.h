@@ -36,7 +36,7 @@ private:
     bool isBalancedInternal(TreeNode *root);
     int heightInternal(TreeNode *root);
     void PrintLevelWiseInternal(TreeNode* root,int Level);
-
+    void preOrderInternal(TreeNode *root);
 public:
 
     BinarySearchTree();
