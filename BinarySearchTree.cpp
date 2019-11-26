@@ -49,6 +49,7 @@ void BinarySearchTree::inorderInternal(TreeNode *root) {
 void BinarySearchTree::printInOrder() {
     inorderInternal(root);
 }
+// Method for tree-traversing level by level
 void BinarySearchTree::printLevelWise()
 {
 	int h = Height(root);
