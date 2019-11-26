@@ -71,6 +71,7 @@ void BinarySearchTree::PrintLevelWiseInternal(TreeNode* root,int Level)
 		PrintLevelWiseInternal(root->right, Level - 1);
 	}	
 }
+// function compute the number of nodes from the root down to the last leaf
 int BinarySearchTree::Height(TreeNode* root)
 {
 	if (root == NULL) {
