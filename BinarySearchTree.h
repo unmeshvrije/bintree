@@ -14,7 +14,7 @@ public:
     {
         delete left;
         delete right;
-        std::cout << "DTOR : TreeNode" << std::endl;
+        //std::cout << "DTOR : TreeNode" << std::endl;
         left = NULL;
         right = NULL;
     }
@@ -35,17 +35,10 @@ private:
     bool findInternal(TreeNode *root, int num);
     bool isBalancedInternal(TreeNode *root);
     int heightInternal(TreeNode *root);
+    void PrintLevelWiseInternal(TreeNode* root,int Level);
 
 public:
 
-        // some private functions
-        // some changes by yousif
-        void appendInternal(TreeNode** root, TreeNode * newnode);
-        void inorderInternal(TreeNode *root);
-        void PrintLevelWiseInternal(TreeNode* root,int Level);
-
-    public:
-    
     BinarySearchTree();
     virtual ~BinarySearchTree();
 

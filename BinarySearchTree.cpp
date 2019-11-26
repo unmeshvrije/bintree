@@ -13,7 +13,7 @@ BinarySearchTree::BinarySearchTree()
 BinarySearchTree::~BinarySearchTree()
 {
     delete root;
-    cout << "DTOR : BST" << endl;
+    //cout << "DTOR : BST" << endl;
     root = NULL;
 }
 

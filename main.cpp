@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
     bst.append(52);
     bst.append(91);
 
-    bst.printInOrder();
+    //bst.printInOrder();
 
     /*bst.printPreOrder();
 
