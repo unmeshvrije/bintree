@@ -86,3 +86,40 @@ bool BinarySearchTree::findInternal(TreeNode *root, int num)
         return findInternal(root->left, num);
     }
 }
+
+bool BinarySearchTree::isBalanced()
+{
+    return isBalancedInternal(root);
+}
+
+bool BinarySearchTree::isBalancedInternal(TreeNode *root)
+{
+    if (root == NULL)
+    {
+        return true;
+    }
+
+    int leftMaxHeight = heightInternal(root->left);
+    int rightMaxHeight = heightInternal(root->right);
+
+    int diff = abs(leftMaxHeight - rightMaxHeight);
+
+    return diff <= 1 && isBalancedInternal(root->left) && isBalancedInternal(root->right);
+}
+
+int BinarySearchTree::height()
+{
+    return heightInternal(root);
+}
+
+int BinarySearchTree::heightInternal(TreeNode *root)
+{
+    if (root == NULL)
+    {
+        return -1;
+    }
+
+    int leftHeight = heightInternal(root->left) + 1;
+    int rightHeight = heightInternal(root->right) + 1;
+    return max(leftHeight, rightHeight);
+}
