@@ -1,7 +1,7 @@
 {
     "version": "2.0.0",
-    "command": "sh", // Replace sh with cmd for Windows
-    "args": ["-c"], // Replace -c with /c for Windows
+    "command": "cmd", // Replace sh with cmd for Windows
+    "args": ["/c"], // Replace -c with /c for Windows
     "type": "shell",
     "presentation": {
         "echo": true,
