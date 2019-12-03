@@ -1,4 +1,4 @@
-#ifndef BINTREE
+﻿#ifndef BINTREE
 #define BINTREE
 
 #include <cstdio>
@@ -56,6 +56,8 @@ public:
     void printLevelWise();
 
     // Shamil-Al-Ameen
+    void printaLevel(TreeNode* root, int level);
+    void LevelWiseReverseInternal(TreeNode* root);
     void printLevelWiseReverse();
 
     // Omar Al Saffar

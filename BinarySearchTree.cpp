@@ -129,13 +129,16 @@ int BinarySearchTree::height()
 int BinarySearchTree::heightInternal(TreeNode *root)
 {
     if (root == NULL)
-    {
-        return -1;
-    }
+	{
+		return 0;
+	}
 
-    int leftHeight = heightInternal(root->left) + 1;
-    int rightHeight = heightInternal(root->right) + 1;
-    return max(leftHeight, rightHeight);
+	int leftHeight = heightInternal(root->left) + 1;
+	int rightHeight = heightInternal(root->right) + 1;
+	if (leftHeight > rightHeight)
+		return (leftHeight);
+	else
+		return (rightHeight);
 }
 
 void BinarySearchTree::printLevelWise()
@@ -160,4 +163,30 @@ void BinarySearchTree::PrintLevelWiseInternal(TreeNode* root,int Level)
 		PrintLevelWiseInternal(root->right, Level - 1);
 	}	
 
+}
+
+// Print one level after receiving it
+void BinarySearchTree::printaLevel(TreeNode* root, int level)
+{
+	if (root == NULL)
+		return;
+	if (level == 1)
+		cout << root->data << " ";
+	else if (level > 1)
+	{
+		printaLevel(root->left, level - 1);
+		printaLevel(root->right, level - 1);
+	}
+}
+
+// Send one level at a time starting from the deepest one
+void BinarySearchTree::LevelWiseReverseInternal(TreeNode* root)
+{
+	for (int currentLevel = height(); currentLevel >= 1; currentLevel--)
+		printaLevel(root, currentLevel);
+}
+
+void BinarySearchTree::printLevelWiseReverse()
+{
+	LevelWiseReverseInternal(root);
 }

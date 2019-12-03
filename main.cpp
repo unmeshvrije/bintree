@@ -22,14 +22,19 @@ int main(int argc, char* argv[]) {
     bst.append(52);
     bst.append(91);
 
-    //bst.printInOrder();
+    cout << "this is the height : " << bst.height()<<endl;
+    cout << "This is the reverse level order : " << endl;
+    bst.printLevelWiseReverse();
+
+
+    /*bst.printInOrder();
 
     bst.printPreOrder();
 
-    /*bst.printPostOrder();
-*/
-   // bst.printLevelWise();
-/*
+    bst.printPostOrder();
+
+    bst.printLevelWise();
+
     bst.printLevelWiseReverse();
 
     bst.printZigZagLevel();
